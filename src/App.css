@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,71 +22,35 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-
-.noise-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10; /* Place it behind other elements */
-}
-
-
-/* App.css */
-
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.app-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text {
-  margin-bottom: 20px;
-}
-
-.noise-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-
-/* App.css */
 
 body, html {
   height: 100%;
@@ -116,47 +82,56 @@ body, html {
   gap: 40px;
   align-items: center;
   justify-content: center;
-  text-align: left;
+  text-align: center; /* Center text horizontally */
   width: 100vw;
-
   color: #B2AA8E; /* Light color for text */
   font-size: 24px;
   font-weight: bold;
   background-color: transparent; /* Transparent background */
+  font-family: "Playwrite NL", sans-serif;
+}
 
-  font-family : "Playwrite NL", sans-serif;
+.image-container {
+  position: fixed;
+  top: 120px;
+  right: 120px;
+}
+
+.image-container img {
+  width:200px; /* Adjust as needed */
+  height: auto;
 }
 
 .text {
   margin: 10px;
   background-color: transparent;
+  font-family: "Raleway", sans-serif;
 }
 
-.footer{
-    display: flex;
-    position: fixed;
-    justify-content: center; 
-    align-items: flex-end;
-    width: 100vw;
-    gap: 20px;
-    bottom: 3rem;
-    color: #B2AA8E;
-    font-size: 1.5rem ;
-    
-    font-family: "Tiny5", sans-serif;
-    font-weight: bold;
+.footer {
+  display: flex;
+  position: fixed;
+  justify-content: center; 
+  align-items: flex-end;
+  width: 100vw;
+  gap: 20px;
+  bottom: 3rem;
+  color: #B2AA8E;
+  font-size: 1.5rem;
+  font-family: "Tiny5", sans-serif;
+  font-weight: bold;
+}
+.text1,  .text2,  .text3 {
+    font-family: "Anton", sans-serif;
+} 
 
-}
-.text1{
-    font-family: "Tiny5", sans-serif;
-}
-.text2{
-    font-size: 3rem;
-}
-a{
-    color: #B2AA8E !important;
-}
 
+.text2 {
+  font-size: 10rem;
+}
+a {
+  color: #B2AA8E !important;
+}
 
 @keyframes moveUp {
   from {
@@ -183,3 +158,14 @@ a{
 .text2-animate {
   animation: moveDown 3s forwards;
 }
+
+@keyframes circleMotion {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50px, -50px) rotate(360deg); /* Adjust translate values and rotation */
+  }
+}
+
+

@@ -7,7 +7,7 @@ function MarkdownPage() {
 
   useEffect(() => {
     // Fetch or import your markdown file here
-    fetch('/path/to/your/markdown-file.md')
+    fetch('r.md')
       .then(response => response.text())
       .then(text => setMarkdown(text))
       .catch(error => console.error('Error loading markdown:', error));
