@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { Noise } from 'noisejs';
 import './App.css';
 import { Link } from 'react-router-dom';
+import './ac.css';
+import './all.min.css';
 
 function Home() {
   const [currentGreeting, setCurrentGreeting] = useState('hello');
+  const [isCanvasEnabled, setIsCanvasEnabled] = useState(true);
+
   const greetings = {
     hello: 'Hello',
     hindi: 'Namaste',
@@ -24,6 +28,8 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    if (!isCanvasEnabled) return;
+
     const canvas = document.querySelector('.noise-background');
     const ctx = canvas.getContext('2d');
     const noise = new Noise(Math.random());
@@ -75,7 +81,7 @@ function Home() {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [isCanvasEnabled]);
 
   const handleLinkClick = (event, filePath = '') => {
     if (filePath) {
@@ -86,8 +92,16 @@ function Home() {
   };
 
   return (
-    <div>
-      <canvas className="noise-background"></canvas>
+    <div className="app-container">
+            {isCanvasEnabled && <canvas className="noise-background"></canvas>}
+
+      <div className="navbar">
+        <button className="toggle-button" onClick={() => setIsCanvasEnabled(!isCanvasEnabled)}>
+          <i className={`fas ${isCanvasEnabled ? 'fa-toggle-on' : 'fa-toggle-off'}`}></i>
+        </button>
+      </div>
+
+
       <div className="text-container">
         <div className="text1">Hi, Its </div>
         <div className="text2">Dheeraj Chowdary</div>
@@ -96,7 +110,7 @@ function Home() {
       <div className="footer">
         <Link to="#" onClick={(event) => handleLinkClick(event, 'r.pdf')}>resume</Link>
         <Link to="https://github.com/rufevean" onClick={handleLinkClick}>github</Link>
-        <Link to="#" onClick={handleLinkClick}>projects</Link>
+        <Link to="/projects" onClick={handleLinkClick}>projects</Link>
         <Link to="mailto:chowdary.s.deeraj@gmail.com" onClick={(event) => handleLinkClick(event)}>contact</Link>
         <Link to="/resources" onClick={handleLinkClick}>resources</Link>
       </div>

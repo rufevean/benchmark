@@ -1,10 +1,13 @@
 
 import React from 'react';
 import './MarkdownPage.css';
+import './ac.css';
 
 function MarkdownPage() {
   return (
     <div className="markdown-container">
+            <div className="animated-static-bg"></div>
+
       <h1>Resources</h1>
 
       <h2>Tools I Use</h2>
