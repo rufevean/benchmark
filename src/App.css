@@ -92,11 +92,11 @@ body, html {
   justify-content: center;
   text-align: center; /* Center text horizontally */
   width: 100vw;
-  color: #B2AA8E; /* Light color for text */
   font-size: 24px;
   font-weight: bold;
   background-color: transparent; /* Transparent background */
   font-family: "Playwrite NL", sans-serif;
+  color: #B2AA8E !important ; 
 }
 
 .image-container {
@@ -114,6 +114,11 @@ body, html {
   margin: 10px;
   background-color: transparent;
   font-family: "Raleway", sans-serif;
+  color: #B2AA8E  // light gold and brown 
+}
+
+a {
+    color : #B2AA8E; 
 }
 
 .footer {
@@ -124,7 +129,8 @@ body, html {
   width: 100vw;
   gap: 20px;
   bottom: 3rem;
-  color: #B2AA8E;
+
+  color: #B2AA8E !important ; 
   font-size: 1.5rem;
   font-family: "Tiny5", sans-serif;
   font-weight: bold;
@@ -178,20 +184,57 @@ a {
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 20px;
+  right : 20px; 
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background : transparent;
+  background: transparent;
   padding: 10px;
   z-index: 1000;
+  
 }
 
+/*TOGGLE BUTTON STYLE*/
 .toggle-button {
-  background: none;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
   border: none;
-  color: white;
-  font-size: 24px;
+  border-radius: 30px;
   cursor: pointer;
+  font-size: 0; /* Hide text */
+  outline: none;
+  transition: background-color 0.4s;
 }
 
+.toggle-button:before {
+  content: attr(data-text); /* Show ON or OFF text */
+  font-size: 24px; /* Adjust text size */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-button:before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+.toggle-button.on {
+  background-color: #2196f3;
+}
+
+.toggle-button.on:before {
+  transform: translate(26px, -50%);
+}

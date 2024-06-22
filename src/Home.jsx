@@ -93,24 +93,25 @@ function Home() {
 
   return (
     <div className="app-container">
-            {isCanvasEnabled && <canvas className="noise-background"></canvas>}
+      {isCanvasEnabled && <canvas className="noise-background"></canvas>}
 
       <div className="navbar">
-        <button className="toggle-button" onClick={() => setIsCanvasEnabled(!isCanvasEnabled)}>
-          <i className={`fas ${isCanvasEnabled ? 'fa-toggle-on' : 'fa-toggle-off'}`}></i>
+        <button
+          className={`toggle-button ${isCanvasEnabled ? 'on' : ''}`}
+          onClick={() => setIsCanvasEnabled(!isCanvasEnabled)}
+          data-text={isCanvasEnabled ? 'ON' : 'OFF'}
+        >
         </button>
       </div>
-
 
       <div className="text-container">
         <div className="text1">Hi, Its </div>
         <div className="text2">Dheeraj Chowdary</div>
-        <div className="text3"> I'm an up and coming open source developer</div>
+        <div className="text3"> I'm an up and coming PL developer </div>
       </div>
       <div className="footer">
         <Link to="#" onClick={(event) => handleLinkClick(event, 'r.pdf')}>resume</Link>
         <Link to="https://github.com/rufevean" onClick={handleLinkClick}>github</Link>
-        <Link to="/projects" onClick={handleLinkClick}>projects</Link>
         <Link to="mailto:chowdary.s.deeraj@gmail.com" onClick={(event) => handleLinkClick(event)}>contact</Link>
         <Link to="/resources" onClick={handleLinkClick}>resources</Link>
       </div>
