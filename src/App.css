@@ -238,3 +238,7 @@ a {
 .toggle-button.on:before {
   transform: translate(26px, -50%);
 }
+
+#pal{
+    color:crimson !important;
+}

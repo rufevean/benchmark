@@ -108,6 +108,7 @@ function Home() {
         <div className="text1">Hi, Its </div>
         <div className="text2">Dheeraj Chowdary</div>
         <div className="text3"> I'm an up and coming PL developer </div>
+        <div className="text3"> I am currenty working on <a id="pal" style={{color:"crimson !important"}} href="https://github.com/rufevean/pal-tek">Pal-Tek</a> </div>
       </div>
       <div className="footer">
         <Link to="#" onClick={(event) => handleLinkClick(event, 'r.pdf')}>resume</Link>
