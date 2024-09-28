@@ -115,6 +115,7 @@ function Home() {
         <Link to="https://github.com/rufevean" onClick={handleLinkClick}>github</Link>
         <Link to="mailto:chowdary.s.deeraj@gmail.com" onClick={(event) => handleLinkClick(event)}>contact</Link>
         <Link to="/resources" onClick={handleLinkClick}>resources</Link>
+        <a href="https://medium.com/@rufevean" onClick={handleLinkClick}>blog</a>
       </div>
     </div>
   );
