@@ -111,7 +111,7 @@ function Home() {
         <div className="text3"> I am currenty working on <a id="pal" style={{color:"crimson !important"}} href="https://pal-tek.com">Pal-Tek</a> </div>
       </div>
       <div className="footer">
-        <Link to="#" onClick={(event) => handleLinkClick(event, 'r.pdf')}>resume</Link>
+        <Link to="#" onClick={(event) => handleLinkClick(event, 'resume_deeraj.pdf')}>resume</Link>
         <Link to="https://github.com/rufevean" onClick={handleLinkClick}>github</Link>
         <Link to="mailto:chowdary.s.deeraj@gmail.com" onClick={(event) => handleLinkClick(event)}>contact</Link>
         <Link to="/resources" onClick={handleLinkClick}>resources</Link>
